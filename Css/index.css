@@ -236,5 +236,32 @@ a {
 }
 
 #dn:hover {
-    color: pink;
+    color: red;
+}
+
+#gh {
+    font-size: 24px;
+}
+
+#dn {
+    font-size: 24px;
+}
+
+button,
+input {
+    height: 25px;
+}
+
+button {
+    /* width: 100px; */
+    margin-right: 10px;
+    text-align: center;
+    /* line-height: 30px; */
+    border: 1px solid rgb(167, 167, 167);
+    background-color: rgb(185, 185, 185);
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(151, 151, 151);
 }

@@ -39,6 +39,8 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
+                <br>
+                <span class="output"></span>
                 <!-- </div> -->
 
                 <span id="giasp" class="giasp">275.000VND</span>
@@ -86,11 +88,12 @@
         //danh gia
         var stars = document.querySelectorAll(".fa-star");
         console.log(stars);
-
+        var output = document.querySelector(".output");
+        console.log(output);
         stars.forEach((star, i) => {
             star.onclick = function () {
                 var cur_star = (i + 1);
-
+                output.innerHTML = `Bạn Đã Đánh Giá ${cur_star} Sao`;
                 stars.forEach((star, j) => {
                     if (cur_star >= (j + 1)) {
                         star.classList.add("gold");
