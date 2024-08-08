@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS40171_ThanhBin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Css/giohang.css">
+    <link rel="stylesheet" href="Css/ctsp.css">
+</head>
+
+<body>
+    <div class="con">
+        <!-- Phần dưới header -->
+        <div class="nav">
+            <span id="ten"></span>
+            <a href="index.html">Trang chủ</a>
+            <a href="">Sản phẩm</a>
+            <span>Giỏ hàng <i class="fa-solid fa-bag-shopping"></i></span>
+            <span id="item"></span>
+            <a id="dn" href="dangnhap.html"> Đăng Nhập <i class="fa-regular fa-user" style="color: #ffffff;"></i></a>
+        </div>
+        <a href=""></a>
+    </div>
+    <!-- GioHang -->
+    <div>
+        <table>
+            <tr>
+                <td>STT</td>
+                <td>Hình sp</td>
+                <td>Tên SP</td>
+                <td>Giá SP</td>
+                <td>Số lượng</td>
+                <td>Thành tiền</td>
+                <td>Xóa</td>
+            </tr>
+            <tbody id="tb">
+                <tr>
+                    <td colspan="7">Giỏ Hàng Rỗng</td>
+                </tr>
+            </tbody>
+            <td colspan="6">Tổng Tiền: </td>
+            <td id="total"></td>
+            <!-- <tr>
+                <th id="anh-giohang-tbl"><a href="7865.html"><img align="left" id="anh-giohang"
+                            src="GiayNam/Dep/mwc (8).jpg" alt=""></a></th>
+                <th id="tensp-giohang"><a id="tensp" href="7865.html">MWC 7865</a></th>
+                <th id="gia-giohang-tbl"><a id="gia-giohang" href="7865.html">79.000VND</a></th>
+                <th><a href="7865.html">SL:06</a>
+                </th>
+                <th align="center"><a href="7865.html">
+                        <div id="them"> 
+                            <div class="divmuangay">
+                                <a href="#">
+                                    <div id="mua">Mua</div>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </th>
+            </tr> -->
+        </table>
+    </div>
+    <script>
+        function show_cart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const tb = document.getElementById('tb');
+            const total = document.getElementById('total');
+            let row = "";
+            let tong = 0;
+            for (let i = 0; i < cart.length; i++) {
+                let tt = cart[i][1] * cart[i][2];
+                tong += tt;
+                row += `
+            <tr>
+                <td>${i + 1}</td>
+                <td><img src="${cart[i][3]}"></td>
+                <td>${cart[i][0]}</td>
+                <td>${cart[i][1]}</td>
+                <td><span>${cart[i][2]}</span></td>
+                
+                <td>${tt.toLocaleString('de-DE')}</td>
+                <td ><i id="del-gh" class="fa-solid fa-trash fa-bounce"  onclick="del(${i})"></i></td>
+            </tr>
+        `
+            }//<td><input onchange="update(this,${i})" type="number" min=1 value="${cart[i][2]}"></td>
+            document.getElementById('tb').innerHTML = row;
+            document.getElementById('total').innerHTML = tong.toLocaleString('de-DE');
+        }
+
+
+        function del(i) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            console.log(i);
+
+            cart.splice(i, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            show_cart();
+        }
+        document.addEventListener('DOMContentLoaded', show_cart());
+
+    </script>
+
+</body>

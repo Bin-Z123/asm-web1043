@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS40171_ThanhBin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .register-container input[type="text"],
+        .register-container input[type="password"],
+        .register-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .register-container button:hover {
+            background-color: #45a049;
+        }
+
+        .register-container a {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .register-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Đăng Ký Tài Khoản</h2>
+        <form>
+            <input type="text" placeholder="Tên đầy đủ">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Tên đăng nhập">
+            <input type="password" placeholder="Mật khẩu">
+            <input type="password" placeholder="Xác nhận mật khẩu">
+            <button type="submit" onclick="register(this)">Đăng Ký</button>
+        </form>
+        <a href="dangnhap.html">Đã có tài khoản? Đăng nhập</a>
+    </div>
+    <script>
+        function register(x) {
+            let button = event.target;
+            console.log(x);
+            console.log(button);
+            let form = x.parentElement.children;
+
+            let ten = form[0].value;
+            let email = form[1].value;
+            let username = form[2].value;
+            let pass = form[3].value;
+            let repass = form[4].value;
+            // mk>6
+            // nhap lai giong mk
+            // khong de trong
+            if (ten == "") {
+                alert("Vui Lòng Nhập Tên");
+            }
+            if (username == "") {
+                alert("Chưa Nhập Username");
+            } if (email == "") {
+                alert("Chưa Nhập Email");
+            } if (pass == "") {
+                alert("Chưa Nhập Mật Khẩu");
+            } if (repass == "   ") {
+                alert("Chưa Nhập lại Mật Khẩu");
+            }
+            if (pass.length < 6) {
+                alert("Mật Khẩu phải dài hơn 6");
+                return false;
+            } if (pass != repass) {
+                alert("Mật Khẩu không trùng khớp");
+                return false;
+            }
+
+            const user = [ten, username, pass];
+            //luu du lieu bo nho cua browser: Localstorage.setItem()
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("Đăng kí thành công");
+            location.href = "dangnhap.html";
+        }
+    </script>
+</body>
+
+</html>

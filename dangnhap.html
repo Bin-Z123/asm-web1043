@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS40171_ThanhBin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .register-container input[type="text"],
+        .register-container input[type="password"],
+        .register-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .register-container button:hover {
+            background-color: #45a049;
+        }
+
+        .register-container a {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .register-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Đăng Nhập Tài Khoản</h2>
+        <form>
+            <input type="text" placeholder="Tên đăng nhập" required>
+            <input type="password" placeholder="Mật khẩu" required>
+            <button type="submit" onclick="login(this)">Đăng nhập</button>
+        </form>
+        <a href="dangki.html">Chưa có tài khoản? Đăng ký</a>
+        <a href="index.html">Trang Chủ</a>
+    </div>
+    <script>
+        function login(x) {
+            // event.target;
+            event.preventDefault();
+            let user = JSON.parse(localStorage.getItem("user"));
+            let form = x.parentElement.children;
+            let username = form[0].value;
+            let pass = form[1].value;
+            if (username == user[1] && pass == user[2]) {
+                alert("Đăng Nhập Thành Công");
+                location.href = "index.html";
+            } else {
+                alert("Đăng Nhập Thất Bại");
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

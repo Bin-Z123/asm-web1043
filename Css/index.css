@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+nav,
+footer {
+    height: 54px;
+    background-color: black;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 54px;
+    box-shadow: 0 0 5px gray;
+    position: relative;
+}
+
+#dn {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+#ten {
+    position: absolute;
+    left: 10px;
+
+}
+
+nav a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.list_sp {
+    margin-top: 10px;
+}
+
+.sp {
+    width: calc(25% - 20px);
+    text-align: center;
+    box-shadow: 0 0 5px gray;
+    padding: 15px;
+    border-radius: 15px;
+    float: left;
+    margin: 10px;
+}
+
+input {
+    width: 50px;
+}
+
+footer h3 {
+    color: #fff;
+}
+
+span {
+    color: #fff;
+    font-size: larger;
+}
+
+#cart {
+    position: relative;
+    background-color: pink;
+    bottom: 160px;
+}
+
+table {
+    width: 500px;
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: wheat;
+    position: absolute;
+    right: 0;
+    top: -500px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+
+}
+
+table img {
+    width: 100px;
+    height: auto;
+}
+
+.input {
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+
+}
+
+.fa-circle-xmark:hover {
+    color: red;
+}
+
+.fa-bag-shopping:hover {
+    color: pink;
+}
+
+/* slider */
+.slider {
+    /* display: flex; */
+    height: auto;
+    box-shadow: 0 0 5px gray;
+    padding: 10px;
+    align-items: center;
+}
+
+.img {
+    position: relative;
+    width: 100%;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    width: 50%;
+
+}
+
+#btn-l {
+    position: absolute;
+    left: 0;
+    top: 350px;
+}
+
+#btn-r {
+    position: absolute;
+    right: 0px;
+    top: 350px;
+}
+
+.button {
+    border: none;
+    width: 50px;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgba(255, 192, 203, 0.555);
+    color: rgb(254, 115, 115);
+    transition: 0.5s ease;
+    box-shadow: 1px black;
+    border-radius: 10%;
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+.button:hover {
+    background-color: rgba(255, 192, 203, 0.783);
+    color: rgba(255, 255, 255, 0.694);
+
+}
+
+/*  */
+
+a {
+    color: white;
+}
+
+.fa-trash:hover {
+    color: red;
+}
+
+#chu {
+    color: black;
+}
+
+#ten {
+    color: white;
+}
+
+.sale {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 5px gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.time {
+    display: flex;
+    gap: 30px;
+}
+
+.time span {
+    color: rgb(255, 1, 1);
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+}
+
+/* gio hang */
+#giohang {
+    position: relative;
+    font-size: 20px;
+}
+
+#soluong_sp {
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+    font-size: 15px;
+    position: absolute;
+    margin-top: 0px;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: -10px;
+    color: red;
+    /* padding-top: -20px; */
+}
+
+#dn:hover {
+    color: pink;
+}

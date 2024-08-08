@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS40171_ThanhBin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Css/ctsp.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="Css/Hinh/logogiayvtb.png">
+</head>
+
+<body>
+    <div class="con">
+        <div class="ctspnav">
+            <span id="ten"></span>
+            <a href="index.html">Trang chủ</a>
+            <a href="">Sản phẩm</a>
+            <span>Giỏ hàng <i class="fa-solid fa-bag-shopping"></i></span>
+            <span id="item"></span>
+            <a id="dn" href="dangnhap.html"> Đăng Nhập <i class="fa-regular fa-user" style="color: #ffffff;"></i></a>
+        </div>
+        <!-- NoiDUng -->
+        <div class="ctsp">
+            <div class="anhsp">
+                <a href=""><img id="anhsp" src="GiayNu/GiayCaoGot/mwc (5).jpg" alt=""></a>
+            </div>
+            <div class="tensp">
+                <div id="tensp" class="ten">Giày cao gót MWC G045 - Giày Cao Gót, Đế Vuông 5cm Bít Mũi, Quai Ngang Có
+                    Đính Khóa Hoa
+                    Xinh Xắn, Thời Trang.</div>
+                <!-- Danh Gia -->
+                <!-- <div class="danhgia-ctsp"> -->
+                <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <!-- </div> -->
+
+                <span id="giasp" class="giasp">275.000VND</span>
+
+                <!-- size -->
+                <div class="size-ctsp">
+                    <div class="kt">Kích Thước:</div>
+                    <div class="size">
+                        <input type="text" value="39" readonly>
+                        <input type="text" value="40" readonly>
+                        <input type="text" value="41" readonly>
+                        <input type="text" value="42" readonly>
+                        <input type="text" value="43" readonly>
+                    </div>
+
+                </div>
+
+                <div class="them"> <!-- Mua va Gio Hang -->
+                    <div class="divmuangay">
+                        <a href="#">
+                            <div class="mua">Mua Ngay</div>
+                        </a>
+                    </div>
+                    <!-- <div class="divgiohang">
+                        <a href="">
+                            <div class="giohang"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng </div>
+                        </a>
+                    </div> -->
+                </div>
+                <div class="text">
+                    • Thiết kế dáng mũi tròn được phối quai ngang đính khóa hoa sang chảnh, quai hậu có chun co
+                    giãn,giày được sử dụng chất liệu da tổng hợp cùng liệu vải jean siêu bền nhẹ làm tôn thêm dáng thon
+                    gọn của đôi chân.
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var data = JSON.parse(localStorage.getItem("sp"));
+        console.log(data);
+        document.getElementById('anhsp').src = `img/${data.hinh}`;
+        document.getElementById('tensp').innerHTML = data.tensp;
+        document.getElementById('giasp').innerHTML = data.gia;
+        //danh gia
+        var stars = document.querySelectorAll(".fa-star");
+        console.log(stars);
+
+        stars.forEach((star, i) => {
+            star.onclick = function () {
+                var cur_star = (i + 1);
+
+                stars.forEach((star, j) => {
+                    if (cur_star >= (j + 1)) {
+                        star.classList.add("gold");
+                    } else {
+                        star.classList.remove("gold");
+                    }
+                })
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

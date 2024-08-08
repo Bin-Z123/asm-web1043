@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS40171_ThanhBin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav>
+            <span id="ten"></span>
+            <a href="">Trang chủ</a>
+            <a href="">Sản phẩm</a>
+            <a href="giohang.html"><span id="giohang">Giỏ hàng <i id="giohang" class="fa-solid fa-bag-shopping"><span
+                            id="soluong_sp">0</span></i></span></a>
+            <span id="item"></span>
+            <a id="dn" href="dangnhap.html"> Đăng Nhập <i class="fa-regular fa-user"></i></a>
+
+        </nav>
+
+        <div class="slider">
+
+
+            <div class="img">
+                <img id="hinh" src="img/mwc.jpg">
+                <input onclick="back()" class="button" type="button" value="<" id="btn-l">
+                <input onclick="next()" class="button" type="button" value=">" id="btn-r">
+            </div>
+
+        </div>
+
+
+
+        <main>
+            <h1 class="sale">
+                <div style="color: red;">Sản Phẩm Khuyến Mãi</div>
+                <div class="time">
+                    <i id="i" class="fa-brands fa-shopify"></i>
+                    <span id="ngay">00</span> Ngày
+                    <span id="gio">00</span> Giờ
+                    <span id="phut">00</span> Phút
+                    <span id="giay">00</span> Giây
+                </div>
+            </h1>
+
+            <div class="list_sp" id="list_sp_sale">
+
+            </div>
+            <h1>Sản Phẩm Bán Chạy</h1>
+            <div class="list_sp" id="list_sp">
+            </div>
+            <div style="clear: both;"></div>
+        </main>
+        <footer>
+
+            <h3>
+                JS cơ bản - Võ Thanh Bin
+            </h3>
+        </footer>
+    </div>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
